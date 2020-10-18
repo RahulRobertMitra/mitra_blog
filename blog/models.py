@@ -69,7 +69,7 @@ class Comment(models.Model):
     name = models.TextField(max_length=50, null=False)
     email = models.EmailField(null=False)
     text = models.TextField(max_length=255, null=False)
-    approved = models.BooleanField(null=True)
+    approved = models.BooleanField(default=True, null=True)
     created = models.DateTimeField(auto_now_add=True, null=True)
     updated = models.DateTimeField(auto_now=True, null=True)
     objects = CommentSection()
