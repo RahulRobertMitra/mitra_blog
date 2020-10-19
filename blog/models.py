@@ -48,7 +48,7 @@ class Post(models.Model):
         return self.title
 
 class Meta:
-        ordering = ['-created']
+    ordering = ['-created']
 
 class CommentSection(models.Manager):
 
@@ -73,6 +73,8 @@ class Comment(models.Model):
     created = models.DateTimeField(auto_now_add=True, null=True)
     updated = models.DateTimeField(auto_now=True, null=True)
     objects = CommentSection()
+
+
 
     def str(self):
         return self.name + self.text
